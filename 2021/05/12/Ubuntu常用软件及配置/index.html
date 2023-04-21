@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Blog">
+    <meta name="description" content="Personal Website">
+    <meta name="author" content="oo">
+    
+    <title>
+        
+            Ubuntu常用软件及配置 |
+        
+        oo
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/avatar.jpg">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/css/font-awesome.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"eryueup.github.io","root":"/","language":"zh-CN","path":"search.json"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":true,"init_open":false},"style":{"primary_color":"#0066CC","avatar":"/images/avatar.jpg","favicon":"/images/avatar.jpg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":false,"scale":true},"first_screen":{"enable":false,"background_img":"/images/bg.svg","description":"Keep writing and Keep loving."},"scroll":{"progress_bar":{"enable":false},"percent":{"enable":true}}},"local_search":{"enable":true,"preload":false},"code_copy":{"enable":true,"style":"mac"},"pjax":{"enable":true},"lazyload":{"enable":true},"version":"3.4.3"};
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 月前","year":"%s 年前"};
+  </script>
+<meta name="generator" content="Hexo 6.0.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <span class="pjax-progress-icon">
+            <i class="fas fa-circle-notch fa-spin"></i>
+        </span>
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                oo
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                首页
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                归档
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                分类
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/tags"
+                            >
+                                标签
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/links"
+                            >
+                                友链
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/about"
+                            >
+                                关于
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">首页</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">归档</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">分类</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags">标签</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/links">友链</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/about">关于</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">Ubuntu常用软件及配置</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/avatar.jpg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">oo</span>
+                        
+                            <span class="author-label">Lv2</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;2021-05-12 12:40:21
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/study/">study</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/ubuntu-app/">ubuntu-app</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fas fa-file-word"></i>&nbsp;<span>1k 字</span>
+        </span>
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fas fa-clock"></i>&nbsp;<span>4 分钟</span>
+        </span>
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <p><strong>基于Ubuntu16.04的个人学习积累软件记录</strong></p>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
+<p>很多部分都是基于其他博文写的，未完成的部分代表我未使用，只是钟意此软件，以后使用时再去解决；完成的部分都是实践过的。</p>
+</blockquote>
+<h2 id="用处"><a href="#用处" class="headerlink" title="用处"></a>用处</h2><blockquote>
+<p> 主要方便更换设备快速搭建熟悉的平台供自己使用！</p>
+</blockquote>
+<h2 id="常用网址"><a href="#常用网址" class="headerlink" title="常用网址"></a>常用网址</h2><p><a class="link"   target="_blank" rel="noopener" href="https://d.serctl.com/?dl_tutorial" >GitHub下载提速1：源于网站<i class="fas fa-external-link-alt"></i></a><br><a class="link"   target="_blank" rel="noopener" href="https://yu.baigekeji.com/" >GitHub下载提速2:源于b站<i class="fas fa-external-link-alt"></i></a></p>
+<h2 id="Note"><a href="#Note" class="headerlink" title="Note"></a>Note</h2><p><code>只是针对个人的使用习惯的记录，请勿直接使用，可能导致不适配。 以下针对接触情况每个分为一个小板块介绍,引号内空白内容表示按需而定！</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#初次进入系统</span></span><br><span class="line">apt update &amp;&amp; apt upgrade -y</span><br></pre></td></tr></table></figure>
+<h3 id="jdk"><a href="#jdk" class="headerlink" title="jdk"></a>jdk</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">apt-cache search java | grep jdk</span><br><span class="line">apt install <span class="string">&quot;   &quot;</span></span><br><span class="line"><span class="comment">#系统默认配置环境变量</span></span><br><span class="line">vim etc/profile</span><br><span class="line"><span class="comment">#添加环境变量</span></span><br><span class="line"><span class="comment">#set java env</span></span><br><span class="line"><span class="built_in">export</span> JAVA_HOME=/usr/lib/jdk/<span class="string">&quot; 	&quot;</span></span><br><span class="line"><span class="built_in">export</span> JRE_HOME=<span class="variable">$&#123;JAVA_HOME&#125;</span>/jre    </span><br><span class="line"><span class="built_in">export</span> CLASSPATH=.:<span class="variable">$&#123;JAVA_HOME&#125;</span>/lib:<span class="variable">$&#123;JRE_HOME&#125;</span>/lib    </span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$&#123;JAVA_HOME&#125;</span>/bin:<span class="variable">$PATH</span></span><br><span class="line"></span><br><span class="line">java -version</span><br></pre></td></tr></table></figure>
+
+<h3 id="tree"><a href="#tree" class="headerlink" title="tree"></a><a class="link"   target="_blank" rel="noopener" href="https://www.cnblogs.com/Mr0wang/p/7266616.html" >tree<i class="fas fa-external-link-alt"></i></a></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#树形目录结构</span></span><br><span class="line">apt install tree</span><br><span class="line"><span class="comment">#tree </span></span><br><span class="line"><span class="comment">#tree -L N</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="vim"><a href="#vim" class="headerlink" title="vim"></a>vim</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim -version</span><br></pre></td></tr></table></figure>
+<h3 id="vundle"><a href="#vundle" class="headerlink" title="vundle"></a><a class="link"   target="_blank" rel="noopener" href="https://github.com/VundleVim/Vundle.vim" >vundle<i class="fas fa-external-link-alt"></i></a></h3><blockquote>
+<p>vim插件第三方管理，相同的有pathogen</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim</span><br><span class="line"><span class="comment">#配置文件</span></span><br><span class="line"><span class="built_in">cd</span> ~/.vimrc</span><br><span class="line"><span class="comment">#添加插件</span></span><br><span class="line"><span class="comment">#添加插件配置</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="git"><a href="#git" class="headerlink" title="git"></a>git</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">apt install git</span><br><span class="line">git --version</span><br></pre></td></tr></table></figure>
+
+<h3 id="httpie"><a href="#httpie" class="headerlink" title="httpie"></a><a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/u012599988/article/details/80988662" >httpie<i class="fas fa-external-link-alt"></i></a></h3><blockquote>
+<p>一款HTTP命令行的客户端，目标是让 CLI 和 web 服务之间的交互尽可能的人性化。这个工具提供了简洁的 http 命令，允许通过自然的语法发送任意 HTTP 请求数据。</p>
+</blockquote>
+<h3 id="pandoc"><a href="#pandoc" class="headerlink" title="pandoc"></a><a class="link"   target="_blank" rel="noopener" href="https://www.jianshu.com/p/6ba04f669d0b" >pandoc<i class="fas fa-external-link-alt"></i></a></h3><blockquote>
+<p> 一款文本格式互相转换的软件</p>
+</blockquote>
+<h3 id="zsh"><a href="#zsh" class="headerlink" title="zsh"></a>zsh</h3><blockquote>
+<p>什么是<a class="link"   target="_blank" rel="noopener" href="https://www.cnblogs.com/dhcn/p/11666845.html" >oh my zsh<i class="fas fa-external-link-alt"></i></a><br>启发：B站的一个up主的<a class="link"   target="_blank" rel="noopener" href="https://github.com/changkun/dotfiles" >github<i class="fas fa-external-link-alt"></i></a></p>
+</blockquote>
+<h3 id="tmux"><a href="#tmux" class="headerlink" title="tmux"></a><a class="link"   target="_blank" rel="noopener" href="https://www.cnblogs.com/liuguanglin/p/9290345.html" >tmux<i class="fas fa-external-link-alt"></i></a></h3><blockquote>
+<p>一款终端复用软件,screen与此类似好像。</p>
+</blockquote>
+<h3 id="powervim"><a href="#powervim" class="headerlink" title="powervim"></a><a class="link"   target="_blank" rel="noopener" href="https://github.com/youngyangyang04/PowerVim" >powervim<i class="fas fa-external-link-alt"></i></a></h3><blockquote>
+<p>一款个性化的vim配置，用于各种语言的vim开发，支持自定义。<br><a class="link"   target="_blank" rel="noopener" href="https://spacevim.org/cn/quick-start-guide/" >spacevim<i class="fas fa-external-link-alt"></i></a>与此类似，只是对vim的原生更改的比较多。这些都是我在想实现ipad远程ssh服务器简单实现编程了解到的,现在已经实现了使用code-server云端IDE暂搁了！！！</p>
+</blockquote>
+<h3 id="code-server"><a href="#code-server" class="headerlink" title="code-server"></a><a class="link"   target="_blank" rel="noopener" href="https://github.com/cdr/code-server" >code-server<i class="fas fa-external-link-alt"></i></a></h3><blockquote>
+<p>类似于<a class="link"   target="_blank" rel="noopener" href="https://cloud.tencent.com/product/scf" >腾讯云函数<i class="fas fa-external-link-alt"></i></a>服务</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~</span><br><span class="line"><span class="comment">#下载tar.gz,我的是3.1.4 linux x86_64</span></span><br><span class="line"><span class="comment">#Ubuntu16.04 阿里云服务器</span></span><br><span class="line"><span class="comment">#解压</span></span><br><span class="line">tar -zxvf code-server-3.4.1-linux-x86_64.tar.gz</span><br><span class="line"><span class="comment">#进入解压后的目录执行以下命令</span></span><br><span class="line"><span class="built_in">cd</span> code-server-3.4.1-linux-x86_64</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用 ./coder-server --help查看用户文档</span></span><br><span class="line"><span class="comment">#设置阿里云示例安全组，放开你需要的port</span></span><br><span class="line"><span class="comment">#配置信息：密码、访问权限、端口 运行任务并挂起</span></span><br><span class="line"><span class="built_in">export</span> PASSWORD=<span class="string">&quot;你的密码&quot;</span>   &amp;&amp;  nohup ./coder-server --bind-addr 0.0.0.0:urport &gt; urlogtxt.log  &amp;</span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment">#然后就可以使用浏览器输入密码访问了</span></span><br><span class="line">ip:port</span><br><span class="line"><span class="comment">#实际上就是一个vscode云端版本，配置什么的都可以参考vscode</span></span><br><span class="line"><span class="comment">#iPad下载servediter（或者vsapp），配置信息参考此链接https://blog.csdn.net/liteng607/article/details/106601569</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#就可以使用了</span></span><br><span class="line"></span><br><span class="line"><span class="comment">##接下来是我个人参考网上教程搞得Java开发环境</span></span><br><span class="line"><span class="comment">##搜索插件</span></span><br><span class="line"><span class="comment">##Chinese (Simplified) Language Pack for Visual Studio Code 中文</span></span><br><span class="line"><span class="comment">##Java Extension Pack Java开发环境包</span></span><br><span class="line"><span class="comment">## IntelliJ IDEA Keybindings  idea快捷方式，有点小小小的问题，可能是我的问题，不过是真的惊到我了，属实好用；eclipse的可以装对应插件</span></span><br><span class="line"></span><br><span class="line"><span class="comment">##所有的东西都是在远端服务器完成，所以有时候会很慢，但是是真的好用，相对于我来说。</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注意：只要服务器重启，此进程就会杀掉，需要重启，如果经常重启服务器可以写个脚本启动服务。</p>
+</blockquote>
+<blockquote>
+<p>参考链接：<br>这几个是安装code-server<br><a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/liuxiao723846/article/details/106940400" >code-server安装使用<i class="fas fa-external-link-alt"></i></a><br><a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/liteng607/article/details/106601569" >code-server+VSApp在iPad上使用VSCode<i class="fas fa-external-link-alt"></i></a><br><a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/zju_cf/article/details/102765085" >在线ide code-server运行起来过程中踩到的坑及解决方法<i class="fas fa-external-link-alt"></i></a><br><a class="link"   target="_blank" rel="noopener" href="https://sspai.com/post/60456" >为 iPad 部署基于 VS Code 的远程开发环境<i class="fas fa-external-link-alt"></i></a></p>
+</blockquote>
+<blockquote>
+<p>这个是配置开发环境的<br><a class="link"   target="_blank" rel="noopener" href="https://code.visualstudio.com/docs/languages/java" >vscode官方<i class="fas fa-external-link-alt"></i></a><br><a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/qq_36556893/article/details/90021433" >vscode安装和使用 Java<i class="fas fa-external-link-alt"></i></a><br>这几个是使用过程的小问题<br><a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/qq_41106844/article/details/106303295" >VS Code 自动生成get-set方<i class="fas fa-external-link-alt"></i></a></p>
+</blockquote>
+<blockquote>
+<p>这是我实现浏览器或者iPad连接服务器进行编程的软件，实际效果还是可以的，完全足够胜任日常轻度的学习使用。</p>
+</blockquote>
+
+        </div>
+
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2021/05/20/%E8%B7%A8%E8%AE%BE%E5%A4%87%E5%90%8C%E6%AD%A5vscode%E9%85%8D%E7%BD%AE/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">跨设备同步vscode配置</span>
+                                <span class="post-nav-item">上一篇</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2021/05/12/Echarts%E5%9B%BE%E8%A1%A8%E5%B7%A5%E5%85%B7/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">Echarts图表工具</span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2021</span>&nbsp;-&nbsp;
+            
+            2023&nbsp;<a href="/">oo</a>
+        </div>
+        
+            <script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+        </div>
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%A8%E5%A4%84"><span class="nav-text">用处</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E7%BD%91%E5%9D%80"><span class="nav-text">常用网址</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Note"><span class="nav-text">Note</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#jdk"><span class="nav-text">jdk</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tree"><span class="nav-text">tree</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vim"><span class="nav-text">vim</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vundle"><span class="nav-text">vundle</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git"><span class="nav-text">git</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#httpie"><span class="nav-text">httpie</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pandoc"><span class="nav-text">pandoc</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#zsh"><span class="nav-text">zsh</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tmux"><span class="nav-text">tmux</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#powervim"><span class="nav-text">powervim</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#code-server"><span class="nav-text">code-server</span></a></li></ol></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/dark-light-toggle.js"></script>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/local-search.js"></script>
+
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/code-copy.js"></script>
+
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/lazyload.js"></script>
+
+
+<div class="post-scripts pjax">
+    
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/left-side-toggle.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/libs/anime.min.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/toc.js"></script>
+    
+</div>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/libs/pjax.min.js"></script>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        window.pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+            // scrollTo: true,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            KEEP.utils.pjaxProgressBarStart();
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            KEEP.utils.pjaxProgressBarEnd();
+            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
+            KEEP.refresh();
+        });
+    });
+</script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Blog">
+    <meta name="description" content="Personal Website">
+    <meta name="author" content="oo">
+    
+    <title>
+        
+            使用Github-Actions搭建hexo博客及问题 |
+        
+        oo
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/avatar.jpg">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/css/font-awesome.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"eryueup.github.io","root":"/","language":"zh-CN","path":"search.json"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":true,"init_open":false},"style":{"primary_color":"#0066CC","avatar":"/images/avatar.jpg","favicon":"/images/avatar.jpg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":false,"scale":true},"first_screen":{"enable":false,"background_img":"/images/bg.svg","description":"Keep writing and Keep loving."},"scroll":{"progress_bar":{"enable":false},"percent":{"enable":true}}},"local_search":{"enable":true,"preload":false},"code_copy":{"enable":true,"style":"mac"},"pjax":{"enable":true},"lazyload":{"enable":true},"version":"3.4.3"};
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 月前","year":"%s 年前"};
+  </script>
+<meta name="generator" content="Hexo 6.0.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <span class="pjax-progress-icon">
+            <i class="fas fa-circle-notch fa-spin"></i>
+        </span>
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                oo
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                首页
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                归档
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                分类
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/tags"
+                            >
+                                标签
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/links"
+                            >
+                                友链
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/about"
+                            >
+                                关于
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">首页</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">归档</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">分类</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags">标签</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/links">友链</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/about">关于</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">使用Github-Actions搭建hexo博客及问题</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/avatar.jpg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">oo</span>
+                        
+                            <span class="author-label">Lv2</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;2021-05-10 20:52:23
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/life/">life</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/hexo/">hexo</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/Github-Actions/">Github-Actions</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/hexo-keep-theme/">hexo-keep-theme</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fas fa-file-word"></i>&nbsp;<span>1.2k 字</span>
+        </span>
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fas fa-clock"></i>&nbsp;<span>4 分钟</span>
+        </span>
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <h3 id="hexo本地安装及自动部署"><a href="#hexo本地安装及自动部署" class="headerlink" title="hexo本地安装及自动部署"></a>hexo本地安装及自动部署</h3><blockquote>
+<p>Nodejs14</p>
+<p>Hexo5.4.0</p>
+<p>Git2.19.0</p>
+<p>Windows10</p>
+<p><em><strong>说明性内容比较多，方便理解，详细配置都指明了官方链接</strong></em></p>
+</blockquote>
+<h4 id="本地安装"><a href="#本地安装" class="headerlink" title="本地安装"></a>本地安装</h4><blockquote>
+<p>本地安装：<a class="link"   target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/" >hexo官网教程<i class="fas fa-external-link-alt"></i></a></p>
+</blockquote>
+<h4 id="远端部署"><a href="#远端部署" class="headerlink" title="*远端部署"></a>*远端部署</h4><blockquote>
+<p>远端部署：<a class="link"   target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/github-pages" >将 Hexo 部署到 GitHub Pages<i class="fas fa-external-link-alt"></i></a></p>
+<p>个人觉的此方法的远端部署没有改变本质，还是需要hexo生成public文件夹再推到GitHub Pages，仅仅方便后续浏览</p>
+</blockquote>
+<h4 id="自动部署到GitHub-Pages"><a href="#自动部署到GitHub-Pages" class="headerlink" title="自动部署到GitHub Pages"></a>自动部署到GitHub Pages</h4><blockquote>
+<p><del>网上关于部署的方法也很多，但是自己部署时总是会遇到一些莫名奇妙的问题：总的来说就是Github Actions的自动化流程错误导致的，具体可以借鉴别人写的流程</del></p>
+<p>在实现自动部署之前，<strong>需要实现hexo本地安装</strong>并且可以正确访问。</p>
+<p><code>其实也可以仅仅本地保留博客文章资源，其余全部(包括主题，只需将主题配置文件备份到本地)使用Github Actions自动化生成。但是这样不利于后期个性化，容错性也比较差。</code></p>
+</blockquote>
+<h5 id="hexo和主题配置"><a href="#hexo和主题配置" class="headerlink" title="hexo和主题配置"></a>hexo和主题配置</h5><blockquote>
+<p>hexo有许多<a class="link"   target="_blank" rel="noopener" href="https://hexo.io/themes/index.html" >主题<i class="fas fa-external-link-alt"></i></a>,也可以在GitHub上直接搜索，此处配置的是<a class="link"   target="_blank" rel="noopener" href="https://keep-docs.xpoet.cn/" >keep主题官网<i class="fas fa-external-link-alt"></i></a></p>
+<p>hexo和keep主题的<code>_config.yml</code>文件跟着官方修改为适合自己的就可以了，官方文档此处也是比较详细的。</p>
+</blockquote>
+<h5 id="GitHub配置"><a href="#GitHub配置" class="headerlink" title="GitHub配置"></a>GitHub配置</h5><blockquote>
+<p><a class="link"   target="_blank" rel="noopener" href="https://juejin.cn/post/6943895271751286821" >keep官方自动部署配置<i class="fas fa-external-link-alt"></i></a>，较为简单快速。</p>
+<p>简要流程：使用远端<strong>私有仓库</strong><code>hexo-source</code>存储hexo源文件，<strong>公开仓库</strong><code>GITHUB_USERNAME.github.io</code>存储hexo generate的<code>./public</code>的站点资源文件；另外需要生成一个<a class="link"   target="_blank" rel="noopener" href="https://github.com/settings/tokens/new" >Token<i class="fas fa-external-link-alt"></i></a>,需要赋予此令牌repo和workflow权限：此令牌配置到<strong>私有仓库</strong><code>hexo-source</code>的<code>Settings -&gt; Secrets -&gt; Actions -&gt; New(命名为HEXO_DEPLOY)</code>用于执行workflow下，并将生成的public资源文件部署到<strong>公开仓库</strong><code>GITHUB_USERNAME.github.io</code>。配置Token后需要对应更改<code>.github\workflows\hexo-deploy.yml</code>中的<code>secrets.HEXO_DEPLOY</code></p>
+<p>此处使用的是全局Token令牌，权限比较大。<a class="link"   target="_blank" rel="noopener" href="https://sanonz.github.io/2020/deploy-a-hexo-blog-from-github-actions/" >这篇文章<i class="fas fa-external-link-alt"></i></a>利用<a class="link"   target="_blank" rel="noopener" href="https://docs.github.com/en/developers/overview/managing-deploy-keys#deploy-keys" >deploy keys<i class="fas fa-external-link-alt"></i></a> 获取权限部署 hexo 博客</p>
+</blockquote>
+<h5 id="Git配置"><a href="#Git配置" class="headerlink" title="Git配置"></a>Git配置</h5><blockquote>
+<p>在完成上述Github配置后，在本地hexo主目录下与远端<strong>私有仓库</strong><code>hexo-source</code>建立连接，推送到远端即可实现自动化。</p>
+</blockquote>
+<h5 id="本地无hexo环境实现hexo-new-post"><a href="#本地无hexo环境实现hexo-new-post" class="headerlink" title="本地无hexo环境实现hexo new post"></a>本地无hexo环境实现hexo new post</h5><blockquote>
+<p>hexo new post hello_world: 创建文章前含有<code>scaffolds\post.md</code>中的内容(也就是hexo官方的<a class="link"   target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/front-matter" >front-matter<i class="fas fa-external-link-alt"></i></a>)，需要使用脚本写入此处内容，<code>scaffolds\post.md</code>的修改也请修改为下面的<code>post_new_dont_use_hexo.bat</code>内容：其中可根据自己情况修改</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"></span><br><span class="line">%用于本地未配置hexo环境生成文章%</span><br><span class="line"></span><br><span class="line">%输入文章名称%</span><br><span class="line">:<span class="keyword">while</span></span><br><span class="line"><span class="built_in">set</span> /p filename=请输入文章名称：</span><br><span class="line"><span class="keyword">if</span> exist <span class="built_in">source</span>\_posts\%filename%.md (</span><br><span class="line">	goto :<span class="keyword">while</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">%因为不使用hexo new post filename 生成文章，需要写入scaffolds\posts.md内容%</span><br><span class="line">(<span class="built_in">echo</span> ---</span><br><span class="line"><span class="built_in">echo</span> title: %filename%</span><br><span class="line"><span class="built_in">echo</span> date: %date:~0,4%-%date:~5,2%-%date:~8,2% %time:~0,2%:%time:~3,2%:%time:~6,2%</span><br><span class="line"><span class="built_in">echo</span> categories:</span><br><span class="line"><span class="built_in">echo</span>     - study</span><br><span class="line"><span class="built_in">echo</span> tags:</span><br><span class="line"><span class="built_in">echo</span>     - </span><br><span class="line"><span class="built_in">echo</span> ---</span><br><span class="line">) &gt; <span class="built_in">source</span>\_posts\%filename%.md</span><br><span class="line"></span><br><span class="line">%Typora安装位置:home、work%</span><br><span class="line"><span class="built_in">set</span> toolpath=<span class="string">&quot;&quot;</span></span><br><span class="line"><span class="keyword">if</span> exist <span class="string">&quot;E:\Typora\Typora\Typora.exe&quot;</span> (</span><br><span class="line">    <span class="built_in">set</span> toolpath=<span class="string">&quot;E:\Typora\Typora\Typora.exe&quot;</span></span><br><span class="line">)</span><br><span class="line"><span class="keyword">if</span> exist <span class="string">&quot;H:\Typora\Typora\Typora.exe&quot;</span> (</span><br><span class="line">    <span class="built_in">set</span> toolpath=<span class="string">&quot;E:\Typora\Typora\Typora.exe&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">start %toolpath% <span class="string">&quot;source\_posts\%filename%.md&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="Git一键推送"><a href="#Git一键推送" class="headerlink" title="Git一键推送"></a>Git一键推送</h5><blockquote>
+<p>在与远端<strong>私有仓库</strong><code>hexo-source</code>建立连接后，也是可以使用<code>push_hexo_source.bat</code>实现</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line">git add .</span><br><span class="line">git commit -m <span class="string">&quot;Update&quot;</span></span><br><span class="line">git push origin master</span><br></pre></td></tr></table></figure>
+
+<h3 id="问题及解决"><a href="#问题及解决" class="headerlink" title="问题及解决"></a>问题及解决</h3><h4 id="图片的插入"><a href="#图片的插入" class="headerlink" title="图片的插入"></a>图片的插入</h4><blockquote>
+<p><a class="link"   target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/asset-folders" >资源文件夹<i class="fas fa-external-link-alt"></i></a>，我仍在使用markdown语法引用图片</p>
+<p>建立<code>source/images</code>文件夹，<code>Typora 菜单栏 -&gt; 格式 -&gt; 当插入图片时  -&gt; 修改为 自动复制到指定路径:../images/$&#123;filename&#125;/</code>，在文章中粘贴后图片自动复制</p>
+<p>在本地阅读时，只需将<code>Typora 菜单栏 -&gt; 格式 -&gt; 设置图像根目录，将其设置为source</code></p>
+</blockquote>
+<h4 id="图表的插入"><a href="#图表的插入" class="headerlink" title="图表的插入"></a>图表的插入</h4><blockquote>
+<p>此处暂未使用过，可以使用js的插件：echarts，在文章中直接调用，实现图表显示</p>
+</blockquote>
+<h4 id="生成的index-html内容为空"><a href="#生成的index-html内容为空" class="headerlink" title="生成的index.html内容为空"></a>生成的<code>index.html</code>内容为空</h4><blockquote>
+<p>出现这种问题，可以正常访问站点，但是却得不到内容，<strong>公开仓库</strong><code>xxx.github.io</code>的<code>index.html</code>为空，网上说是<code>nodejs</code>版本过低，使用12+可以解决，我当时使用的是14也出现此问题，重复几次部署后意外正常。</p>
+</blockquote>
+<h3 id="远程部署缺失文件"><a href="#远程部署缺失文件" class="headerlink" title="远程部署缺失文件"></a>远程部署缺失文件</h3><blockquote>
+<p>Github Action可以查看日志信息，如果出现文件缺失，或者上一条类似问题，可以先查看日志。</p>
+<p>我这里遇到了一个因为<code>front matter</code>错误导致编译失败，导致此文件缺失。</p>
+</blockquote>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/%E4%BD%BF%E7%94%A8Github-Actions%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2%E5%8F%8A%E9%97%AE%E9%A2%98/Hexo%E6%90%AD%E5%BB%BA%E9%97%AE%E9%A2%98_%E6%96%87%E4%BB%B6%E7%BC%BA%E5%A4%B1.png"
+                      alt="image-20210819015446719"
+                ></p>
+<h4 id="发布时隔undefined"><a href="#发布时隔undefined" class="headerlink" title="发布时隔undefined"></a>发布时隔undefined</h4><blockquote>
+<p>系统时区与生成站点使用的时区不一致，导致时间差非法，可在<code>.github\workflows\hexo-deploy.yml</code>明确时区</p>
+</blockquote>
+<h4 id="访问速度较慢"><a href="#访问速度较慢" class="headerlink" title="访问速度较慢"></a>访问速度较慢</h4><blockquote>
+<p>可以使用<a class="link"   target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/76951130" >CDN加速<i class="fas fa-external-link-alt"></i></a></p>
+</blockquote>
+<h4 id="keep主题配置后不生效"><a href="#keep主题配置后不生效" class="headerlink" title="keep主题配置后不生效"></a>keep主题配置后不生效</h4><blockquote>
+<p>因为我使用了<a class="link"   target="_blank" rel="noopener" href="https://keep-docs.xpoet.cn/usage-tutorial/advanced.html#%E5%B9%B3%E6%BB%91%E5%8D%87%E7%BA%A7" >平滑升级<i class="fas fa-external-link-alt"></i></a>，推送时<code>keep.yml</code>覆盖了<code>_config.yml</code>，因此在推送前我将<code>_config.yml</code>复制到了<code>keep.yml</code>中便可以解决。</p>
+</blockquote>
+
+        </div>
+
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2021/05/12/%E5%B8%B8%E7%94%A8%E7%AC%94%E8%AE%B0%E9%93%BE%E6%8E%A5/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">常用笔记链接</span>
+                                <span class="post-nav-item">上一篇</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2021/05/09/categories%20and%20tags/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">test categories and tags</span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2021</span>&nbsp;-&nbsp;
+            
+            2023&nbsp;<a href="/">oo</a>
+        </div>
+        
+            <script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+        </div>
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#hexo%E6%9C%AC%E5%9C%B0%E5%AE%89%E8%A3%85%E5%8F%8A%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2"><span class="nav-text">hexo本地安装及自动部署</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9C%AC%E5%9C%B0%E5%AE%89%E8%A3%85"><span class="nav-text">本地安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BF%9C%E7%AB%AF%E9%83%A8%E7%BD%B2"><span class="nav-text">*远端部署</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2%E5%88%B0GitHub-Pages"><span class="nav-text">自动部署到GitHub Pages</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#hexo%E5%92%8C%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE"><span class="nav-text">hexo和主题配置</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#GitHub%E9%85%8D%E7%BD%AE"><span class="nav-text">GitHub配置</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Git%E9%85%8D%E7%BD%AE"><span class="nav-text">Git配置</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%9C%AC%E5%9C%B0%E6%97%A0hexo%E7%8E%AF%E5%A2%83%E5%AE%9E%E7%8E%B0hexo-new-post"><span class="nav-text">本地无hexo环境实现hexo new post</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Git%E4%B8%80%E9%94%AE%E6%8E%A8%E9%80%81"><span class="nav-text">Git一键推送</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E5%8F%8A%E8%A7%A3%E5%86%B3"><span class="nav-text">问题及解决</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9B%BE%E7%89%87%E7%9A%84%E6%8F%92%E5%85%A5"><span class="nav-text">图片的插入</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9B%BE%E8%A1%A8%E7%9A%84%E6%8F%92%E5%85%A5"><span class="nav-text">图表的插入</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%94%9F%E6%88%90%E7%9A%84index-html%E5%86%85%E5%AE%B9%E4%B8%BA%E7%A9%BA"><span class="nav-text">生成的index.html内容为空</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%9C%E7%A8%8B%E9%83%A8%E7%BD%B2%E7%BC%BA%E5%A4%B1%E6%96%87%E4%BB%B6"><span class="nav-text">远程部署缺失文件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%91%E5%B8%83%E6%97%B6%E9%9A%94undefined"><span class="nav-text">发布时隔undefined</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%AE%BF%E9%97%AE%E9%80%9F%E5%BA%A6%E8%BE%83%E6%85%A2"><span class="nav-text">访问速度较慢</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#keep%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE%E5%90%8E%E4%B8%8D%E7%94%9F%E6%95%88"><span class="nav-text">keep主题配置后不生效</span></a></li></ol></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/dark-light-toggle.js"></script>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/local-search.js"></script>
+
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/code-copy.js"></script>
+
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/lazyload.js"></script>
+
+
+<div class="post-scripts pjax">
+    
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/left-side-toggle.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/libs/anime.min.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/toc.js"></script>
+    
+</div>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/libs/pjax.min.js"></script>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        window.pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+            // scrollTo: true,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            KEEP.utils.pjaxProgressBarStart();
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            KEEP.utils.pjaxProgressBarEnd();
+            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
+            KEEP.refresh();
+        });
+    });
+</script>
+
+
+
+</body>
+</html>
